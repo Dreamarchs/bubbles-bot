@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package com.mythic.madjayq.generated;
+
+message GuildCharacter {
+    required string guildie = 1;
+    required uint64 dkp = 2;
+    repeated string reserves = 3;
+}
