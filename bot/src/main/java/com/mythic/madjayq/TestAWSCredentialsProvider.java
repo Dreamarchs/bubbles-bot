@@ -6,10 +6,18 @@ import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.google.inject.Provider;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class TestAWSCredentialsProvider implements Provider<AWSCredentialsProvider> {
 
-    private final String accessKeyId = "<put-id-here>";
-    private final String secretAccessKey = "<put-key-here>";
+    FileRead fileread = new FileRead();
+    private final String accessKeyId = fileread.configRead(0, 7);
+    private final String secretAccessKey = fileread.configRead(1, 8);
+
+    public TestAWSCredentialsProvider() throws IOException {
+    }
 
     private BasicAWSCredentials getCredentials() {
         return new BasicAWSCredentials(accessKeyId, secretAccessKey);

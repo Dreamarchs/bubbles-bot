@@ -1,0 +1,3 @@
+AWSid = <Put AWS Id here>
+AWSkey = <Put AWS secret key here>
+DiscToken = <Put Disc token here>
