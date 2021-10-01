@@ -1,7 +1,6 @@
 package com.mythic.madjayq;
 
 import com.google.inject.Provider;
-
 import java.io.IOException;
 
 public class TestDiscordCredentialsProvider implements Provider<DiscordCredentials> {
@@ -9,14 +8,12 @@ public class TestDiscordCredentialsProvider implements Provider<DiscordCredentia
     public TestDiscordCredentialsProvider() throws IOException {
     }
 
-    FileRead fileRead = new FileRead();
-    String discToken = fileRead.configRead(2, 11);
-
-    private final String apiToken = discToken;
+    private final ConfigFileRead fileRead = new ConfigFileRead();
+    private final String discordToken = fileRead.configRead(2, 11);
 
     @Override
     public DiscordCredentials get() {
-        return new DiscordCredentials(apiToken);
-    }
+        return new DiscordCredentials(discordToken);
 
+    }
 }

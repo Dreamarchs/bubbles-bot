@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileRead {
-    public String configRead(int stringSkip, int charSkip) throws IOException {
+public class ConfigFileRead {
+    public static String configRead(int stringSkip, int charSkip) throws IOException {
 
             BufferedReader in = new BufferedReader(new FileReader("config.txt"));
             for (int i = 0; i < stringSkip; i++) {
